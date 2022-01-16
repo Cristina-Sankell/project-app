@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -79,4 +79,12 @@ p {
 
 .form-link:hover {
   text-decoration: underline;
+}
+
+// Torbjörn
+
+.bio {
+}
+
+.addbio {
 }
