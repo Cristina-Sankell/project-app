@@ -1,25 +1,14 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useUserAuth } from "../context/UserAuthContext";
 
-export default function Home() {
-    
-    let navigate = useNavigate();
+const Home = () => {
 
-    useEffect(() => {
-        let authToken = sessionStorage.getItem("Auth Token")
+    const { user } = useUserAuth();
+  
+  return (
+      <div className="container">
+        <p>Welcome: {user && user.email}</p>
+      </div>
+  );
+};
 
-        if (authToken) {
-            navigate("/")
-        }
-
-        if (!authToken) {
-            navigate("/login")
-        }
-    }, [navigate])
-
-    return (
-        <div>
-            Home Page
-        </div>
-    )
-}
+export default Home;

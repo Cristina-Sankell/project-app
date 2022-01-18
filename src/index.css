@@ -80,3 +80,14 @@ p {
 .form-link:hover {
   text-decoration: underline;
 }
+
+.error-msg {
+  margin-bottom: 10px;
+  padding: 20px;
+  font-weight: 700;
+  color: rgb(133, 0, 0);
+  background-color: rgb(196, 196, 196);
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid rgb(133, 0, 0);
+}
