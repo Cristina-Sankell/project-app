@@ -1,5 +1,6 @@
 import Bio from "./Bio";
 import { useState } from "react";
+import Footer from "./Footer";
 
 const User = () => {
   const { user, setUser } = useState([]);
@@ -34,6 +35,7 @@ const User = () => {
           <Bio />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
