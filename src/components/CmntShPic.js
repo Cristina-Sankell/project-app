@@ -1,11 +1,17 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const CmntShPic = () => {
-  const firstRender = useRef(true);
+  // const firstRender = useRef(true);
+
+  const [newComment, setNewComment] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("newComment");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
 
   const [inputValue, setInputValue] = useState("");
-  const [newComment, setNewComment] = useState([]);
 
   const [currentCommentId, setCurrentCommentId] = useState(null);
 
@@ -28,6 +34,11 @@ const CmntShPic = () => {
   const removeComment = (id) => {
     setNewComment(newComment.filter((Cmt) => Cmt.id !== id));
   };
+
+  useEffect(() => {
+    // storing input newComment
+    localStorage.setItem("newComment", JSON.stringify(newComment));
+  }, [newComment]);
 
   return (
     <div className="bio">

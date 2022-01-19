@@ -1,12 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 
 const Bio = () => {
   // const firstRender = useRef(true);
 
+  const [newBio, setNewBio] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("newBio");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
   const [inputValue, setInputValue] = useState("");
-  const [newBio, setNewBio] = useState([]);
 
   const [currentBioId, setCurrentBioId] = useState(null);
 
@@ -34,6 +40,11 @@ const Bio = () => {
     setNewBio(newBio.newBioText);
     setCurrentBioId(newBio.newBioId);
   };
+
+  useEffect(() => {
+    // storing input newBio
+    localStorage.setItem("newBio", JSON.stringify(newBio));
+  }, [newBio]);
 
   return (
     <div className="bio">
