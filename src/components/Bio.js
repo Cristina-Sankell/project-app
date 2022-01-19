@@ -25,6 +25,7 @@ const Bio = () => {
 
     setInputValue("");
   };
+
   const removeBio = (id) => {
     setNewBio(newBio.filter((nBio) => nBio.id !== id));
   };
@@ -51,6 +52,7 @@ const Bio = () => {
         <div key={nBio.id} className="bio">
           <h2 className="bio-text">{nBio.text}</h2>
           <button onClick={() => editBio(nBio.text)}>Edit</button>
+          <button onClick={() => removeBio(nBio.id)}>Delete</button>
         </div>
       ))}
     </div>

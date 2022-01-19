@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Bio from "./Bio";
-import User from "./User";
-import CmntShPic from "./CmntShPic";
 import Footer from "./Footer";
+import Flow from "./Flow";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -30,6 +28,7 @@ export default function Home() {
           User Page{" "}
         </a>{" "}
       </div>
+      <Flow />
       <Footer />
     </div>
   );
