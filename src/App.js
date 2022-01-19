@@ -11,7 +11,8 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Header from "./components/Header";
 
-import Bio from "./components/Bio";
+import User from "./components/User";
+import Footer from "./components/Footer";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -63,6 +64,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+
       <Routes>
         <Route
           path="/login"
@@ -85,7 +87,8 @@ function App() {
           }
         />
         <Route path="/" element={<Home />} />
-        <Route path="/Bio" element={<Bio />} />
+        <Route path="/User" element={<User />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </div>
   );

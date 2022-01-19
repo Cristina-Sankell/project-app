@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Bio from "./Bio";
+import User from "./User";
 import CmntShPic from "./CmntShPic";
+import Footer from "./Footer";
 
 export default function Home() {
   let navigate = useNavigate();
@@ -20,8 +22,15 @@ export default function Home() {
 
   return (
     <div>
-      Home Page
-      <Bio />
+      <h1> Home Page </h1>
+      <div className="user-link">
+        <p>Click the link to get directed to:</p>
+        <a className="" href="/User">
+          {" "}
+          User Page{" "}
+        </a>{" "}
+      </div>
+      <Footer />
     </div>
   );
 }
