@@ -84,7 +84,21 @@ p {
 // Torbjörn
 
 .bio {
+  display: flex;
+  flex-direction: column;
 }
 
-.addbio {
+.bio-text {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(241, 241, 241);
+  border-radius: 5px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 1);
+  width: 50%;
+}
+
+.btnHover {
+  transition: all 500ms;
+  delay-after-transition: 2000ms;
 }

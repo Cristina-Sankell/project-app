@@ -2,10 +2,12 @@ import { useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const Bio = () => {
-  const firstRender = useRef(true);
+  // const firstRender = useRef(true);
 
   const [inputValue, setInputValue] = useState("");
   const [newBio, setNewBio] = useState([]);
+
+  const [currentBioId, setCurrentBioId] = useState(null);
 
   const addNewBio = (e) => {
     e.preventDefault();
@@ -26,6 +28,11 @@ const Bio = () => {
     setNewBio(newBio.filter((nBio) => nBio.id !== id));
   };
 
+  const editBio = (setNewBio) => {
+    setNewBio(newBio.newBioText);
+    setCurrentBioId(newBio.newBioId);
+  };
+
   return (
     <div className="bio">
       <h3>Your Bio</h3>
@@ -37,12 +44,12 @@ const Bio = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button>Add new Bio / Edit</button>
+        <button>Add Bio</button>
       </form>
       {newBio.map((nBio) => (
-        <div key={nBio.id} className="addbio">
-          <p>{nBio.text}</p>
-          <button onClick={() => removeBio(nBio.id)}>Delete</button>
+        <div key={nBio.id} className="bio">
+          <h2 className="bio-text">{nBio.text}</h2>
+          <button onClick={() => editBio(nBio.text)}>Edit</button>
         </div>
       ))}
     </div>

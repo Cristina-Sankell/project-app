@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Bio from "./Bio";
+import CmntShPic from "./CmntShPic";
 
 export default function Home() {
   let navigate = useNavigate();
