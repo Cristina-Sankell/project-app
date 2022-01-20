@@ -7,8 +7,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn } = useUserAuth();
+  const { logIn, user } = useUserAuth();
   const navigate = useNavigate();
+
+  if (user) {
+      navigate("/")
+  }
 
   const handleSubmit = async (e) => {
 

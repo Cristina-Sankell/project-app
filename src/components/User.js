@@ -1,4 +1,3 @@
-import Bio from "./Bio";
 import { useState } from "react";
 
 const User = () => {
@@ -31,7 +30,6 @@ const User = () => {
           <img></img>
         </div>
         <div className="bio-container">
-          <Bio />
         </div>
       </div>
     </div>
