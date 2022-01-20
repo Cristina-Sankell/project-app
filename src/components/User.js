@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Bio from "./Bio";
 
 const User = () => {
   const { user, setUser } = useState([]);
@@ -30,6 +31,7 @@ const User = () => {
           <img></img>
         </div>
         <div className="bio-container">
+          <Bio />
         </div>
       </div>
     </div>
