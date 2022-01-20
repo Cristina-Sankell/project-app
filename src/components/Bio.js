@@ -16,6 +16,10 @@ const Bio = () => {
 
   const [currentBioId, setCurrentBioId] = useState(null);
 
+  const isInvaLisInput = () => {
+    return inputValue.trim() === "" || uuidv4.trim() === "";
+  };
+
   const addNewBio = (e) => {
     e.preventDefault();
 
@@ -34,11 +38,6 @@ const Bio = () => {
 
   const removeBio = (id) => {
     setNewBio(newBio.filter((nBio) => nBio.id !== id));
-  };
-
-  const editBio = (setNewBio) => {
-    setNewBio(newBio.newBioText);
-    setCurrentBioId(newBio.newBioId);
   };
 
   useEffect(() => {
@@ -62,7 +61,6 @@ const Bio = () => {
       {newBio.map((nBio) => (
         <div key={nBio.id} className="bio">
           <h2 className="bio-text">{nBio.text}</h2>
-          <button onClick={() => editBio(nBio.text)}>Edit</button>
           <button onClick={() => removeBio(nBio.id)}>Delete</button>
         </div>
       ))}
