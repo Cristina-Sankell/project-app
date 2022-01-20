@@ -21,13 +21,6 @@ export default function Home() {
   return (
     <div>
       <h1> Home Page </h1>
-      <div className="user-link">
-        <p>Click the link to get directed to:</p>
-        <a className="" href="/User">
-          {" "}
-          User Page{" "}
-        </a>{" "}
-      </div>
       <Flow />
       <Footer />
     </div>

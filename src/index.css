@@ -143,16 +143,6 @@ span {
   border-radius: 8px 8px 0 0;
 }
 
-.user-link {
-  margin-top: 5rem;
-  width: 400px;
-  padding: 3%;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(221, 221, 221);
-  border-radius: 5px;
-  text-align: center;
-}
-
 .image-container {
   padding: 0.25rem 2rem 1rem 2rem;
   min-width: 300px;
