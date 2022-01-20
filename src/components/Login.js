@@ -33,7 +33,7 @@ const Login = () => {
             {error && <p className="error-msg">{error}</p>}
             <input type="email" placeholder="Email address" onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-            <button variant="primary" type="Submit">Log in</button>
+            <button type="Submit">Log in</button>
             <p>Don't have an account yet?</p>
             <Link className="form-link" to="/signup">Sign Up</Link>
         </form>

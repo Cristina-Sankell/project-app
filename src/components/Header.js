@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/UserAuthContext";
 
 const Header = () => {
@@ -19,7 +19,10 @@ const Header = () => {
      return (
          <div className="header">
              <h1>Header</h1>
-             {user && <button variant="primary" onClick={handleLogout}>Log out</button>}
+             <div>
+                {user && <button><Link className="btn-link" to="/profile">My Profile</Link></button>}
+                {user && <button onClick={handleLogout}>Log out</button>}
+             </div>
          </div>
      )
  }
