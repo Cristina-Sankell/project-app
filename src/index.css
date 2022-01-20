@@ -106,9 +106,9 @@ p {
   align-items: center;
 }
 
- /* Torbjörn */
+/* Torbjörn */
 
- .bio {
+.bio {
   display: flex;
   flex-direction: column;
 }
@@ -208,3 +208,4 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
