@@ -34,8 +34,8 @@ const Header = () => {
              <h1>Header</h1>
              <div className="header-logged-in">
                 {user && <p>Welcome: {user.displayName}</p>}
-                {onHome && <button onClick={toProfile}><Link className="btn-link" to="/profile">My Profile</Link></button>}
-                {onProfile && <button onClick={toHome}><Link className="btn-link" to="/">Home</Link></button>}
+                {user && onHome && <button onClick={toProfile}><Link className="btn-link" to="/profile">My Profile</Link></button>}
+                {user && onProfile && <button onClick={toHome}><Link className="btn-link" to="/">Home</Link></button>}
                 {user && <button onClick={handleLogout}>Log out</button>}
              </div>
          </div>
