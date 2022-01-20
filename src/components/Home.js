@@ -1,12 +1,10 @@
-import { useUserAuth } from "../context/UserAuthContext";
+import Flow from "./Flow";
 
 const Home = () => {
 
-    const { user } = useUserAuth();
-  
   return (
       <div className="container">
-        <p>Welcome: {user && user.displayName}</p>
+        <Flow />
       </div>
   );
 };
