@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useUserAuth } from "../context/UserAuthContext";
 
-export default function Header() {
+const Header = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-    let authToken = sessionStorage.getItem("Auth Token")
+    const { logOut, user } = useUserAuth();
+    const navigate = useNavigate();
 
-    useEffect(() => {
-            
-        if (authToken) {
-            setIsLoggedIn(true)
+    const handleLogout = async () => {
+        try {
+          await logOut();
+          navigate("/login");
+        } catch (error) {
+          console.log(error.message);
         }
-        if (!authToken) {
-            setIsLoggedIn(false)
-        }
-    }, [authToken])
+      };
+    
 
-   let navigate = useNavigate();
+     return (
+         <div className="header">
+             <h1>Header</h1>
+             <div className="header-logged-in">
+                {user && <p>Welcome: {user.displayName}</p>}
+                {user && <button><Link className="btn-link" to="/profile">My Profile</Link></button>}
+                {user && <button onClick={handleLogout}>Log out</button>}
+             </div>
+         </div>
+     )
+ }
 
-    const handleLogout = () => {
-         sessionStorage.removeItem("Auth Token");
-         navigate("/login")
-    }
-
-    return (
-        <div className="header">
-            <h1>Header</h1>
-            {isLoggedIn ? <button onClick={handleLogout}>Log out</button> : null }
-        </div>
-    );
-};
+export default Header 
