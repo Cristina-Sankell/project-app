@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const Bio = () => {
+  //uncomment this to make the localStorage work
   /*
   // const firstRender = useRef(true);
 
@@ -16,8 +17,9 @@ const Bio = () => {
     // storing input newBio
     localStorage.setItem("newBio", JSON.stringify(newBio));
   }, [newBio]);
-  */
+*/
 
+  // remove this to remove the error that occurs if you remove the enclosing comment up top
   const [newBio, setNewBio] = useState([]);
 
   const [inputValue, setInputValue] = useState("");
