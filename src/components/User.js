@@ -4,15 +4,6 @@ import Bio from "./Bio";
 
 const User = () => {
   const { user } = useUserAuth();
-  /*
-  const users = [
-    ...user,
-    {
-      name: "John",
-      email: "john@example.com",
-    },
-  ];
-  */
 
   return (
     <div>
@@ -20,11 +11,19 @@ const User = () => {
         <h2 className="user-title">Profile Page</h2>
         <div className="name-email">
           <p>
-            <input placeholder={user.displayName} type="text"></input>
+            <input
+              className="user-input"
+              placeholder={user.displayName}
+              type="text"
+            ></input>
           </p>
           <span className="span"></span>
           <p>
-            <input placeholder={user.email} type="text"></input>
+            <input
+              className="user-input"
+              placeholder={user.email}
+              type="text"
+            ></input>
           </p>
         </div>
         <div className="image-container">
@@ -32,7 +31,7 @@ const User = () => {
           <img></img>
         </div>
         <div className="bio-container">
-          
+          <Bio />
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Header from "./Header";
 
 const Bio = () => {
+  /*
   // const firstRender = useRef(true);
 
   const [newBio, setNewBio] = useState(() => {
@@ -12,13 +12,15 @@ const Bio = () => {
     return initialValue || "";
   });
 
+  useEffect(() => {
+    // storing input newBio
+    localStorage.setItem("newBio", JSON.stringify(newBio));
+  }, [newBio]);
+  */
+
+  const [newBio, setNewBio] = useState([]);
+
   const [inputValue, setInputValue] = useState("");
-
-  const [currentBioId, setCurrentBioId] = useState(null);
-
-  const isInvaLisInput = () => {
-    return inputValue.trim() === "" || uuidv4.trim() === "";
-  };
 
   const addNewBio = (e) => {
     e.preventDefault();
@@ -40,16 +42,12 @@ const Bio = () => {
     setNewBio(newBio.filter((nBio) => nBio.id !== id));
   };
 
-  useEffect(() => {
-    // storing input newBio
-    localStorage.setItem("newBio", JSON.stringify(newBio));
-  }, [newBio]);
-
   return (
     <div className="bio">
-      <h3>Your Bio</h3>
+      <h3 className="bio-title">Biography</h3>
       <form onSubmit={addNewBio}>
         <input
+          className="this"
           autoFocus
           type="text"
           placeholder={`Tell us about you`}
@@ -69,9 +67,3 @@ const Bio = () => {
 };
 
 export default Bio;
-
-// Button to add bio
-// button to edit existing Bio
-// button to delete existing Bio
-// place for the bio
-// placholder for the bio

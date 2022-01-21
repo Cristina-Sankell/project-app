@@ -11,16 +11,30 @@ import { UserAuthContextProvider } from "./context/UserAuthContext";
 function App() {
   return (
     <div className="container">
-          <UserAuthContextProvider>
-          <Header />
-            <Routes>
-              <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>}/>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/profile" element={<ProtectedRoute><User /></ProtectedRoute>} />
-            </Routes>
-            <Footer />
-          </UserAuthContextProvider>
+      <UserAuthContextProvider>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <User />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+        <Footer />
+      </UserAuthContextProvider>
     </div>
   );
 }

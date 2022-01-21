@@ -24,6 +24,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.header-logged-in p {
+  margin-right: 2rem;
+  margin-bottom: 12.5px;
+  font-size: 1.5rem;
+}
 
 .form {
   max-width: 400px;
@@ -111,6 +116,11 @@ p {
 .bio {
   display: flex;
   flex-direction: column;
+  margin-right: 5px;
+}
+
+.bio-title {
+  margin-bottom: 0.5rem;
 }
 
 .bio-text {
@@ -120,7 +130,10 @@ p {
   background-color: rgb(241, 241, 241);
   border-radius: 5px;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 1);
-  width: 50%;
+  width: 100%;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .footer {
@@ -152,11 +165,19 @@ span {
   border: 1px solid;
   border-radius: 8px;
   background-color: rgb(0, 0, 0, 0.75);
+  margin-bottom: 5rem;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 1);
+}
+.user-input {
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 0;
 }
 .user-title {
   color: white;
   margin-top: -1.5rem;
   margin-bottom: 1rem;
+  font-size: 2.25rem;
 }
 .name-email {
   background-color: rgb(241, 242, 241, 1);
@@ -186,6 +207,12 @@ span {
   background-color: rgb(241, 242, 241, 1);
 }
 
+.image-container p {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .cmt {
   padding: 10px;
   margin: 5px 0;
@@ -198,11 +225,20 @@ span {
 
 .flow {
   width: 90vw;
-  min-height: 55vh;
+  min-height: 80vh;
   max-height: auto;
   border-left: 1px solid;
   border-right: 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.flow h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+.flow p {
+  width: 80vw;
+  line-height: 1.2;
+  font-size: 1.25rem;
 }
